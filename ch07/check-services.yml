@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  tasks:
+     - name: Check sshd state   # service sshd start
+       ansible.builtin.service: # systemctl start sshd
+         name: sshd
+         state: started
+
+     - name: Check rsyslog state
+       ansible.builtin.service:
+         name: rsyslog
+         state: started

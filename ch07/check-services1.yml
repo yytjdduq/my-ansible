@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  tasks:
+     - name: Check sshd and rsyslog state   # service sshd start
+       ansible.builtin.service: # systemctl start sshd
+         name: "{{ item }}"
+         state: started
+       loop:
+         - sshd
+         - rsyslog
